@@ -1,0 +1,91 @@
+.project{
+    display: flex;
+    width: 80%;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.project .project-cover{
+    width: 400px;
+    border-radius: 25px;
+}
+
+.project h3, p{
+    font-family: 'Ubuntu Regular';
+}
+
+.project h3{
+    color: #14efff;
+    font-size: 25px;
+    margin-top: 25px;
+}
+
+.project p{
+    color: #fff;
+    margin-top: 15px;
+}
+
+.project .project-info{
+    width: 600px;
+    margin-left: 30px;
+}
+
+.project-btns{
+    display: flex;
+}
+
+.project-btns a{
+    font-family: 'Ubuntu Regular';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #14efff;
+    width: 125px;
+    height: 30px;
+    border: solid #14efff 2px;
+    border-radius: 30px;
+    margin: 15px;
+    transition: all .3s;
+}
+
+.project-btns a:hover{
+    background: #14efff;
+    color: #08111a;
+}
+
+a i{
+    margin-right: 5px;
+}
+
+.project-technologies{
+    display: flex;
+    height: 40px;
+    align-items: center;
+}
+
+.project-technologies i{
+    z-index: 1;
+    color: #5b6b7a;
+    font-size: 35px;
+    margin-right: 10px;
+    transition: all .5s;
+}
+
+.project-technologies i:hover{
+    z-index: 2;
+    transform: scale(200%) rotate(10deg);
+    filter: drop-shadow(1px 1px 5px #08111a);
+}
+
+.project-technologies img{
+    z-index: 1;
+    width: 45px;
+    margin-right: 10px;
+    transition: all .5s;
+}
+
+.project-technologies img:hover{
+    z-index: 2;
+    transform: scale(200%) rotate(10deg);
+    filter: drop-shadow(1px 1px 5px #08111a);
+}

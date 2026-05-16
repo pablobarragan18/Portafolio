@@ -1,0 +1,272 @@
+@font-face {
+    font-family: 'Zen Dots'; /* Nombre de la fuente que usarás en CSS */
+    src: url('../fonts/Zen_Dots/ZenDots-Regular.ttf') format('truetype');
+    font-weight: normal; /* Peso de la fuente */
+    font-style: normal; /* Estilo de la fuente (normal, italic, etc.) */
+}
+
+@font-face {
+    font-family: 'Josefin Sans'; /* Nombre de la fuente que usarás en CSS */
+    src: url('../fonts/Josefin_Sans/JosefinSans-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal; /* Peso de la fuente */
+    font-style: normal; /* Estilo de la fuente (normal, italic, etc.) */
+}
+
+@font-face {
+    font-family: 'Ubuntu Regular'; /* Nombre de la fuente que usarás en CSS */
+    src: url('../fonts/Ubuntu/Ubuntu-Regular.ttf') format('truetype');
+    font-weight: normal; /* Peso de la fuente */
+    font-style: normal; /* Estilo de la fuente (normal, italic, etc.) */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: sans-serif;
+}
+
+body{
+    background: #192631;
+}
+
+header{
+    display: flex;
+    height: 750px;
+    width: 100%;
+    justify-content: center;
+    background: -webkit-linear-gradient(to right, rgba(1, 11, 62, 0.9), rgba(44, 15, 82, 0.6)), url(../img/banner.png);
+    background: linear-gradient(to right, rgba(1, 11, 62, 0.9), rgba(44, 15, 82, 0.6)), url(../img/banner.png);
+}
+
+/* header img{
+    margin-left: 150px;
+    filter: drop-shadow(-24px 26px 112px #00f2ff);
+} */
+
+.hero-container {
+    height: 700px;
+    position: relative;
+    display: inline-block;
+}
+
+.glow-image {
+    display: block;
+    position: relative;
+    height: 750px;
+    z-index: 2;
+    margin-left: 100px;
+}
+
+/* Este es el "brillo" que actúa como capa de Photoshop */
+.hero-container::after {
+    content: "";
+    position: absolute;
+    /* Ajusta la posición de la sombra según tus valores (-24px 26px) */
+    top: 0; 
+    left: 12%;
+    width: 100%;
+    height: 100%;
+  
+    background: #00d0ff; /* El color de tu sombra */
+    filter: blur(120px); /* El desenfoque de tu drop-shadow */
+  
+    /* MODOS DE FUSIÓN: */
+    /* mix-blend-mode: screen; */
+    mix-blend-mode: plus-lighter;
+  
+    z-index: 1;
+    opacity: 0.8; /* Controla la intensidad del brillo */
+}
+
+.presentation{
+    color: #fff;
+    width: 500px;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.presentation .name, .lastname{
+    font-family: 'Zen Dots';
+}
+
+.presentation .name{
+    font-size: 60px;
+}
+
+.presentation .lastname{
+    font-size: 40px;
+}
+
+.presentation h3 span, .hi{
+    color: #14efff;
+    font-family: 'Josefin Sans';
+}
+
+.presentation h3 .i-am{
+    color: #fff;
+}
+
+.presentation .hi{
+    font-size: 22px;
+}
+
+.presentation h3{
+    font-size: 30px;
+    margin-top: 15px;
+}
+
+.presentation p{
+    font-family: 'Josefin Sans';
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.presentation button{
+    font-family: 'Josefin Sans';
+    font-weight: bold;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    background: #00b9de;
+    color: #010b3e;
+    width: 150px;
+    height: 35px;
+    cursor: pointer;
+    margin-right: 15px;
+    border: solid #00d0ff 3px;
+    transition: all .3s;
+}
+
+.presentation button:hover{
+    color: #fff;
+    background: #010b3e;
+}
+
+main{
+    background: #08111a;
+    height: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+/* MOUSE SCROLL */
+
+/* Contenedor principal del indicador */
+.scroll-downs {
+  position: absolute;
+  bottom: 25px; /* Separación del borde inferior */
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 10;
+  color: #ffffff; /* El color de tu portafolio */
+  font-family: sans-serif; /* Ajusta a la fuente que uses */
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  
+  /* Transición suave para ocultar/mostrar */
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+  
+  /* Animación de flote (arriba-abajo) */
+  animation: floatScroll 3s ease-in-out infinite;
+}
+
+/* Cuando esta clase se añada por JS, el elemento se oculta */
+.scroll-downs.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* --- Ratón CSS Puro --- */
+.mousey {
+  width: 25px;
+  height: 40px;
+  border: 2px solid #ffffff;
+  border-radius: 12px;
+  margin: 0 auto 5px; /* Centrado horizontal y margen abajo */
+  padding: 0 4px;
+}
+
+/* La ruedita del ratón */
+.scroller {
+  width: 3px;
+  height: 8px;
+  border-radius: 25%;
+  background-color: #ffffff;
+  animation-name: scrollAnimation; /* Animación de la ruedita bajando */
+  animation-duration: 2s;
+  animation-timing-function: cubic-bezier(.15,.41,.69,.94);
+  animation-iteration-count: infinite;
+}
+
+/* Texto de "scroll" */
+.scroll-text {
+  margin: 0;
+}
+
+/* --- ANIMACIONES --- */
+
+/* 1. Animación del ratón flotando en el espacio */
+@keyframes floatScroll {
+  0% { transform: translate(-50%, 0px); }
+  50% { transform: translate(-50%, -15px); } /* Sube 15px */
+  100% { transform: translate(-50%, 0px); }
+}
+
+/* 2. Animación de la ruedita bajando (para dar el efecto visual) */
+@keyframes scrollAnimation {
+  0% { opacity: 0; }
+  10% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(15px); opacity: 0; }
+}
+
+/* ICONOS FLOTANTES*/
+/* Estilo general de los iconos */
+.icon {
+  position: absolute;
+  width: 100px; /* Ajusta el tamaño a tu gusto */
+  height: auto;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8)); /* Un pelín de glow */
+  z-index: 3;
+  animation: float 4s ease-in-out infinite; /* Animación base */
+}
+
+/* --- POSICIONAMIENTO --- */
+
+/* Arriba a los lados de la cabeza */
+.icon-html { top: 10%; left: 100px; animation-delay: 0s; }
+.icon-css { top: 15%; right: -50px; animation-delay: 1s; }
+
+/* Abajo a los lados */
+.icon-js { bottom: 10%; left: 20px; animation-delay: 2s;}
+.icon-php { bottom: 18%; right: -150px; animation-delay: 0.5s; width: 130px;}
+
+/* --- ANIMACIÓN --- */
+@keyframes float {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(10deg); /* Sube 20px y gira un poquito */
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+
+.changing-text {
+    border-right: 3px solid #14efff; /* El color cian de tu portafolio */
+    padding-right: 5px;
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { border-color: transparent; }
+    50% { border-color: #14efff; }
+}

@@ -1,0 +1,41 @@
+.articles{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+article h2{
+    font-family: 'Josefin Sans';
+    color: #14efff;
+    padding: 50px;
+    font-size: 40px;
+}
+
+.technologies-cards{
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Crea dos columnas iguales */
+    gap: 25px; /* El espacio entre las columnas y filas */
+}
+
+.card{
+    width: 600px;
+    border: solid #14efff 4px;
+    border-radius: 25px;
+    padding: 30px;
+
+}
+
+.card h3{
+    color: #ffffff;
+    font-family: 'Ubuntu Regular';
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.imgs-container img{
+    width: 70px;
+    margin-right: 15px;
+}
